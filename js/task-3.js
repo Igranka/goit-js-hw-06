@@ -10,15 +10,15 @@ class StringBuilder {
     }
 
     padEnd(str) {
-        return this.#value + str;
+        this.#value = this.#value + str;
     }
 
     padStart(str) {
-        return str + this.#value;
+        this.#value = str + this.#value;
     }
 
     padBoth(str) {
-        return str + this.#value + str;
+        this.#value = str + this.#value + str;
     }
 }
 
@@ -31,3 +31,4 @@ builder.padEnd("^");
 console.log(builder.getValue()); // "^.^"
 builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
+
